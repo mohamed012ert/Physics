@@ -6,7 +6,7 @@
   font-size:smal;
 }
 .main{
- width: 100%;
+ width: auto;
 }
 .title,
 section {
@@ -39,7 +39,7 @@ h3{
   font-family: "El Messiri", sans-serif;  }
 
 h3 span{
-    color: rgb(255, 0, 0);
+  color: rgb(255, 0, 0);
 }
 h4{
   padding: 20px;
@@ -107,7 +107,7 @@ h2 {
   width: 370px;
   height: 500px;
   border-radius: 10%;
-  
+  margin-top: -10%;
 }
 .dropdown {
   align-items: center;
@@ -140,68 +140,12 @@ h5 {
   justify-content: center;
   margin-bottom: 30px;
 }
-/* @media (min-width: 0px) and (max-width: 342px) {
-  .title {
-    display: block;
-  }
-  .title h2 {
-    margin-left: 40px;
-  }
-  .d1,
-  .d2 {
-    margin: 10px;
-  }
-} */
-
-/* //////////////////////// */
-/* @keyframes move {
-  0% {
-    transform: rotate(20deg);
-    transform: translate(0, 0);
-  }
-
-  25% {
-    transform: rotate(-20deg);
-  }
-
-  50% {
-    transform: rotate(20deg);
-    font-size: 23px;
-  }
-  75% {
-    transform: rotate(-20deg);
-  }
-  100% {
-    transform: rotate(20deg);
-    transform: translate(0, 0);
-  }
-}
-@keyframes circle {
-  0% {
-    transform: translate(50%, 30%);
-  }
-
-  20% {
-    transform: translate(10%, -10%);
-  }
-  40% {
-    transform: translate(70%, -70%);
-  }
-
-  60% {
-    transform: translate(50%, 20%);
-  }
-
-  80% {
-    transform: translate(20%, -15%);
-  }
-  100% {
-    transform: translate(50%, 30%);
-  }
-} */
-
 .me {
  display: flex;
  justify-content: center;
 
+}
+.vv{
+  margin-top:5% ;
+  margin-bottom: -10%;
 }
