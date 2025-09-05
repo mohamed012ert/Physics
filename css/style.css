@@ -104,10 +104,10 @@ h2 {
   border-radius: 10%;
 }
 .logof2 img {
-  width: 370px;
+
   height: 500px;
   border-radius: 10%;
-  margin-top: -10%;
+
 }
 .dropdown {
   align-items: center;
@@ -149,3 +149,4 @@ h5 {
   margin-top:5% ;
   margin-bottom: -10%;
 }
+
