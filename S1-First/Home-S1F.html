@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>العلوم المتكاملة | أولى ثانوي</title>
+
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=El+Messiri:wght@500;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+      :root {
+        --primary-color: #2563eb;
+        --secondary-color: #1e40af;
+        --accent-color: #fbbf24;
+        --bg-color: #f3f4f6;
+        --text-color: #1f2937;
+        --card-bg: #ffffff;
+      }
+
+      body {
+        font-family: "Cairo", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        overflow-x: hidden;
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-family: "El Messiri", sans-serif;
+      }
+
+      /* Navbar */
+      .navbar {
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+        padding: 15px 0;
+      }
+      .navbar-brand img {
+        height: 50px;
+        transition: transform 0.3s;
+      }
+      .navbar-brand:hover img {
+        transform: scale(1.05);
+      }
+      .nav-link {
+        font-weight: 600;
+        color: #333 !important;
+        margin: 0 10px;
+        position: relative;
+        transition: color 0.3s;
+      }
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        right: 0;
+        background-color: var(--primary-color);
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after, .nav-link.active::after {
+        width: 100%;
+      }
+      .nav-link:hover, .nav-link.active {
+        color: var(--primary-color) !important;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+        padding: 100px 0 140px;
+        color: white;
+        text-align: center;
+        border-radius: 0 0 50% 50% / 40px;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -50px;
+        left: -50px;
+        width: 200px;
+        height: 200px;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+      }
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        animation: fadeInDown 1s ease-out;
+      }
+      .hero span {
+        color: var(--accent-color);
+      }
+      .hero p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+        font-weight: 300;
+      }
+
+      /* Profile Section */
+      .profile-card {
+        background: white;
+        margin-top: -60px;
+        border-radius: 20px;
+        padding: 30px;
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 10;
+        animation: fadeInUp 1s ease-out;
+      }
+      .profile-card h3 {
+        color: var(--secondary-color);
+        margin-bottom: 5px;
+      }
+      .badge-custom {
+        background-color: #e0e7ff;
+        color: var(--primary-color);
+        padding: 5px 15px;
+        border-radius: 50px;
+        font-size: 0.9rem;
+        font-weight: 600;
+      }
+
+      /* Dua Box */
+      .dua-box {
+        background: #fff;
+        border-right: 5px solid var(--accent-color);
+        padding: 20px;
+        margin: 30px auto;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        max-width: 800px;
+        font-style: italic;
+        color: #555;
+      }
+
+      /* Section Titles */
+      .section-title {
+        text-align: center;
+        margin: 70px 0 40px;
+        position: relative;
+        display: inline-block;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .section-title h2 {
+        font-size: 2.2rem;
+        color: var(--secondary-color);
+        position: relative;
+        z-index: 2;
+      }
+      .section-title::after {
+        content: '';
+        position: absolute;
+        width: 60%;
+        height: 10px;
+        background-color: rgba(37, 99, 235, 0.15);
+        bottom: 5px;
+        left: 20%;
+        z-index: 1;
+        border-radius: 10px;
+      }
+
+      /* Cards Styling */
+      .course-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        border: none;
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+      }
+      .course-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+      }
+      .card-img-wrapper {
+        overflow: hidden;
+        height: 220px;
+        position: relative;
+      }
+      .card-img-wrapper img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+      .course-card:hover .card-img-wrapper img {
+        transform: scale(1.1);
+      }
+      .card-body {
+        padding: 25px;
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+      .card-body h5 {
+        font-weight: 700;
+        margin-bottom: 20px;
+        color: #333;
+      }
+      .btn-custom {
+        background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 50px;
+        font-weight: 600;
+        width: 100%;
+        transition: 0.3s;
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.3);
+      }
+      .btn-custom:hover {
+        background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+        box-shadow: 0 8px 20px rgba(37, 99, 235, 0.4);
+        color: white;
+        transform: translateY(-2px);
+      }
+
+      /* Footer */
+      footer {
+        background-color: white;
+        margin-top: 100px;
+        padding: 50px 0 20px;
+        text-align: center;
+        border-top: 1px solid #eaeaea;
+      }
+      .whatsapp-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background-color: #25D366;
+        color: white;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        font-size: 30px;
+        box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+        transition: 0.3s;
+        text-decoration: none;
+        margin-bottom: 15px;
+      }
+      .whatsapp-btn:hover {
+        transform: scale(1.1) rotate(15deg);
+        color: white;
+      }
+      footer p {
+        color: #777;
+        font-size: 0.9rem;
+      }
+      footer span {
+        font-weight: bold;
+        color: var(--primary-color);
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from { opacity: 0; transform: translateY(-30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(30px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg sticky-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../imgs/kh.png" alt="Logo" onerror="this.style.display='none'"> 
+            <span style="font-weight: bold; color: var(--secondary-color); font-size: 1.2rem;">العلوم المتكاملة</span>
+        </a>
+
+        <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu">
+          <i class="fas fa-bars text-primary" style="font-size: 24px;"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainMenu">
+          <ul class="navbar-nav ms-auto align-items-center">
+            <li class="nav-item"><a class="nav-link" href="../index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link active" href="#">ملفات PDF</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">من نحن</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <h1>العلوم المتكاملة <span>1 ثانوي</span></h1>
+        <p>رحلتك نحو التفوق في الفيزياء تبدأ من هنا</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="profile-card">
+        <h3>م/ محمد مصطفى خلف</h3>
+        <span class="badge-custom">Electrical Engineer & Educator</span>
+        
+        <div class="dua-box mt-4">
+            <i class="fas fa-quote-right mb-2 text-primary opacity-25"></i>
+            <p class="mb-0">اللَّهُمَّ عليك توكلت وإليك أسلمت، فثبّت في ذهني ما حفظت وأكرمني يا كريم إنّك نِعمَ الوكيل</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">
+      <h2>الوحدة الاولى : الغلاف المائي</h2>
+    </div>
+    
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="course-card">
+            <div class="card-img-wrapper">
+              <img src="../imgs/pr2/1.jpg" alt="وحدات القياس" />
+            </div>
+            <div class="card-body text-center">
+              <h5>تاثر الضغط المائي علي الكائنات الحية</h5>
+              <a href="./select-1.html" class="btn btn-custom">ابدأ المذاكرة <i class="fas fa-arrow-left me-2"></i></a>
+            </div>
+          </div>
+        </div>
+
+    <footer>
+      <div class="container">
+        <h4 class="mb-4" style="font-family: 'El Messiri', sans-serif;">تواصل معي</h4>
+        
+        <a href="https://wa.me/2001221122383" class="whatsapp-btn" target="_blank">
+          <i class="fab fa-whatsapp"></i>
+        </a>
+        
+        <p class="mt-3 mb-0">&copy; 2024/2025 جميع الحقوق محفوظة</p>
+        <p class="small">تصميم وتطوير: <span>Mohamed Mostafa Khalaf</span></p>
+      </div>
+    </footer>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
