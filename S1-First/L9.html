@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درس الفيديو</title>
+    <!-- تضمين Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* إضافة خط Inter لدعم اللغة العربية بشكل جميل وتناسق عالمي */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0f4f8 0%, #e0e7ee 100%); /* خلفية متدرجة مشابهة لخلفية موقعك */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+            margin: 0;
+        }
+
+        /* حاوية الفيديو (Responsive Aspect Ratio 16:9) */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* نسبة 16:9 */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            background-color: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* تنسيق الأزرار المشابهة لتصميم الموقع */
+        .btn-primary {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 123, 255, 0.5);
+        }
+    </style>
+</head>
+<body class="p-4 md:p-8">
+    <header class="text-center mb-10 p-6 bg-white/90 backdrop-blur-lg rounded-xl shadow-2xl shadow-blue-200/50 border border-blue-100">
+        <div class="flex items-center justify-center mb-2">
+            <!-- أيقونة شرارة جذابة -->
+            <svg class="w-8 h-8 md:w-10 md:h-10 text-[#007bff] ml-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+            </svg>
+            <h1 class="text-3xl md:text-5xl font-extrabold text-[#007bff] leading-tight">الفهم الصحيح</h1>
+        </div>
+        <p class="text-xl text-gray-700 mt-2 font-medium border-t border-gray-200 pt-3">الدرس: تاثر الضغط المائي علي الكائنات الحية</p>
+    </header>
+
+    <main class="max-w-6xl w-full mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
+        
+        <!-- العمود الأيمن: مشغل الفيديو والمحتوى الرئيسي -->
+        <div class="lg:col-span-2">
+            
+            <!-- حاوية الفيديو -->
+            <div class="video-wrapper">
+                <iframe 
+                    src="https://www.youtube.com/embed/6pu8_A0ks2Q?rel=0&modestbranding=1&playsinline=1" 
+                    allowfullscreen 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    title="درس الفيديو التعليمي">
+                </iframe>
+            </div>
+           
+
+        </div>
+
+        <!-- العمود الأيسر: قائمة الدروس والأزرار الإضافية -->
+        <div class="lg:col-span-1">
+            
+            <!-- أزرار الإجراءات -->
+            <div class="p-6 bg-white rounded-xl shadow-lg mb-8">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">إجراءات الدرس</h3>
+                <button class="w-full btn-primary bg-[#007bff] text-white py-3 px-4 rounded-lg font-semibold text-base mb-3 hover:bg-blue-600 focus:outline-none focus:ring-4 focus:ring-blue-300">
+                    <a href="./Home-S1F.html">تحميل المذكرة (PDF)</a>
+                </button>
+                <button class="w-full btn-primary bg-gray-100 text-gray-700 py-3 px-4 rounded-lg font-semibold text-base border border-gray-200 hover:bg-gray-200 focus:outline-none focus:ring-4 focus:ring-gray-300">
+                    <a href="https://wa.me/2001221122383" class="whatsapp-btn" target="_blank">  
+                       طرح سؤال على المهندس   </a> 
+                    </button>
+            </div>
+
+             <!--<div class="p-6 bg-white rounded-xl shadow-lg">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">دروس ذات صلة</h3>
+                <ul class="space-y-3">
+                     
+                    <li class="p-3 bg-blue-50 border-r-4 border-blue-500 rounded-lg font-medium text-blue-700 shadow-sm cursor-pointer">
+                        الكهرباء الساكنة: المفهوم والشحنة
+                    </li>
+                   
+                    <li class="p-3 hover:bg-gray-50 rounded-lg text-gray-700 cursor-pointer transition duration-150 ease-in-out">
+                        القوة الكهربائية وقانون كولوم
+                    </li>
+                    <li class="p-3 hover:bg-gray-50 rounded-lg text-gray-700 cursor-pointer transition duration-150 ease-in-out">
+                        المجال الكهربائي وحساباته
+                    </li>
+                    <li class="p-3 hover:bg-gray-50 rounded-lg text-gray-700 cursor-pointer transition duration-150 ease-in-out">
+                        تطبيقات على المكثفات الكهربائية
+                    </li>
+                </ul>
+            </div>-->
+        </div>
+
+    </main>
+
+    <footer class="mt-10 pt-4 pb-2 text-center text-sm text-gray-500 border-t border-gray-300/50">
+        جميع الحقوق محفوظة لمنصة "فيزياء بمفهوم جديد" &copy; 2025
+    </footer>
+
+</body>
+</html>
